@@ -22,7 +22,7 @@ e-com cart/
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
+git clone https://github.com/rukadikar123/E-com-cart
 ```
 
 2. Start Backend:
