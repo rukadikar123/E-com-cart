@@ -4,7 +4,7 @@ import axios from "axios";
 import ProductList from "../components/ProductList";
 import CartList from "../components/CartList";
 import { FaCartShopping } from "react-icons/fa6";
-
+import { toast } from "react-toastify";
 
 function Home() {
   const [products, setProducts] = useState([]);
@@ -14,8 +14,8 @@ function Home() {
   // Fetch products & cart
   const fetchProducts = async () => {
     const res = await axios.get(`${import.meta.env.VITE_API_URL}/products`);
-    console.log("product data:",res?.data)
-    
+    console.log("product data:", res?.data);
+
     setProducts(res?.data?.products);
   };
 
@@ -23,7 +23,6 @@ function Home() {
     const res = await axios.get(`${import.meta.env.VITE_API_URL}/carts`);
     setCart(res?.data?.cartItems);
     setTotal(res?.data?.total);
-
   };
 
   useEffect(() => {
@@ -33,22 +32,33 @@ function Home() {
 
   // Cart actions
   const addToCart = async (id) => {
-    await axios.post(`${import.meta.env.VITE_API_URL}/carts/add`, { productId: id, qty: 1 });
+    await axios.post(`${import.meta.env.VITE_API_URL}/carts/add`, {
+      productId: id,
+      qty: 1,
+    });
+    toast.success("Item added to cart ");
     fetchCart();
-    
   };
-x
+  
   const removeFromCart = async (id) => {
     await axios.delete(`${import.meta.env.VITE_API_URL}/carts/delete/${id}`);
-  
-    
+    toast.success("item removed from cart");
     fetchCart();
   };
 
   const handleCheckout = async () => {
     const name = prompt("Enter your name:");
     const email = prompt("Enter your email:");
-    const res = await axios.post(`${import.meta.env.VITE_API_URL}/checkout`, { name, email });
+    if (!name || !email) {
+      toast.error("Please enter your name and email.");
+      return;
+    }
+    const res = await axios.post(`${import.meta.env.VITE_API_URL}/checkout`, {
+      name,
+      email,
+    });
+
+    toast.success("Checkout Successful!")
 
     alert(
       `Receipt:\nName: ${res.data.receipt.User.name}\nTotal: Rs${
@@ -67,7 +77,9 @@ x
 
       <ProductList products={products} onAdd={addToCart} />
 
-      <h2 className="text-2xl font-semibold mb-3 mt-20 text-center"><FaCartShopping className="inline pb-1"/> Your Cart</h2>
+      <h2 className="text-2xl font-semibold mb-3 mt-20 text-center">
+        <FaCartShopping className="inline pb-1" /> Your Cart
+      </h2>
       <CartList cart={cart} onRemove={removeFromCart} />
 
       <div className="mt-5 flex justify-between items-center">
