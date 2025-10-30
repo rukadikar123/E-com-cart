@@ -2,8 +2,6 @@
 
 A RESTful API backend service for managing shopping cart functionality in an e-commerce application.
 
-## Demo Video
-Watch the demo here → [Loom Link](https://www.loom.com/share/c90da37d927c4d8ab667dd4e9b22c0d5)
 
 
 ## Features

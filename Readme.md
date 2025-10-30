@@ -8,6 +8,10 @@ This project consists of two main parts:
 - [Frontend](./frontend/README.md) - React-based user interface
 - [Backend](./backend/README.md) - Node.js REST API
 
+## Demo Video
+Watch the demo here → [Loom Link](https://www.loom.com/share/c90da37d927c4d8ab667dd4e9b22c0d5)
+
+
 ## Project Structure
 ```
 e-com cart/
