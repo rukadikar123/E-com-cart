@@ -3,7 +3,7 @@ import { checkout } from "../controllers/checkout.controller.js";
 
 const router=Router()
 
-router.get("/checkout",checkout)
+router.post("/",checkout)
 
 
 export default router

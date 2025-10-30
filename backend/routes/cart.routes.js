@@ -3,9 +3,9 @@ import { addToCart, deleteFromCart, getCarts } from "../controllers/cart.control
 
 const router=Router()
 
-router.get("/carts",getCarts)
+router.get("/",getCarts)
 router.post("/add",addToCart)
-router.delete("/Delete",deleteFromCart)
+router.delete("/Delete/:id",deleteFromCart)
 
 
 export default router

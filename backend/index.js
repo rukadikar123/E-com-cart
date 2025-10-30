@@ -17,9 +17,9 @@ app.use(cors())
 app.use(express.json())
 
 
-app.use("/product",productRoutes)
-app.use("/cart",cartRoutes)
-app.use("/checkout",checkoutRoutes)
+app.use("/api/products",productRoutes)
+app.use("/api/carts",cartRoutes)
+app.use("/api/checkout",checkoutRoutes)
 
 
 const PORT=process.env.PORT || 3000
