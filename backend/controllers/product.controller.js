@@ -4,16 +4,10 @@ export const getProducts = async (req, res) => {
   try {
 
      const products = await Product.find();
-     if(products.length===0){
-        return res.status(404).json({
-            success:false,
-            message:"Products not found"
-        })
-     }
-
+   
      return res.status(200).json({
         success:true,
-        message:"products fetched successfully",
+        message:products.length >0 ?"products fetched successfully" : "no products found",
         products
      })
 

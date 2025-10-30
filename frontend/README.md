@@ -1,18 +1,76 @@
-# React + Vite
+# E-Commerce Cart Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React-based frontend application for an e-commerce shopping cart system.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Product listing with add to cart functionality
+- Shopping cart management
+- Cart total calculation
+- Checkout process 
+- Responsive design using Tailwind CSS
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+- React.js
+- Tailwind CSS
+- Axios for API calls
+- React Icons
 
-Note: This will impact Vite dev & build performances.
+## Components
 
-## Expanding the ESLint configuration
+- `ProductList` - Displays grid of available products
+- `ProductCard` - Individual product display component
+- `CartList` - Shows items in shopping cart
+- `CartItem` - Individual cart item component
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Setup
+
+1. Clone the repository
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Create a `.env` file with:
+```
+VITE_API_URL=http://localhost:3000/api
+```
+
+4. Start the development server:
+```bash
+npm run dev
+```
+
+## Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run lint` - Run ESLint
+- `npm run preview` - Preview production build
+
+## Environment Variables
+
+- `VITE_API_URL` - Backend API base URL
+
+## Project Structure
+
+```
+frontend/
+├── src/
+│   ├── components/
+│   │   ├── ProductList.jsx
+│   │   ├── ProductCard.jsx
+│   │   ├── CartList.jsx
+│   │   └── CartItem.jsx
+│   ├── pages/
+│   │   └── Home.jsx
+│   ├── App.jsx
+│   └── main.jsx
+├── package.json
+└── README.md
+```
+
+## Author
+
+Siddharth Rukadikar
